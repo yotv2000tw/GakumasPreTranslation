@@ -1,3 +1,5 @@
 .vscode
 pretranslation
 tmp/*
+node_modules/
+.env

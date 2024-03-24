@@ -1,0 +1,29 @@
+{
+  "name": "sc-pre-translation",
+  "version": "1.0.0",
+  "description": "Repo for Idolm@ster Shiny Colors PreTranslation",
+  "main": "index.ts",
+  "repository": "git@github.com:ShinyGroup/SCPreTranslation.git",
+  "author": "darwintree <daerwendeshu@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^20.11.30",
+    "@types/papaparse": "^5.3.14",
+    "axios": "^1.6.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.2.0",
+    "loglevel": "^1.9.1",
+    "loglevel-plugin-prefix": "^0.8.4",
+    "papaparse": "^5.4.1"
+  },
+  "scripts": {
+    "translate:folder": "ts-node ./scripts/translate.ts",
+    "move": "ts-node ./scripts/moveTranslated.ts"
+  }
+}

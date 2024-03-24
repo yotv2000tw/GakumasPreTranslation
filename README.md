@@ -13,4 +13,22 @@
   - 预翻译脚本。输入待翻译文件，输出预翻译完成的csv。使用 `ChatGPT API` 兼容的模型。
   - 路径助手脚本。
   - github action脚本。自动化更新工具。
+- src: 脚本依赖的库代码
 - tmp: 临时文件夹。用于存放临时文件。临时文件夹内的内容将被git忽略。
+
+## 如何使用
+
+可选模型：
+
+- claude-3-opus-20240229 <- 速度比gpt4稍快
+- gpt-4-1106-preview
+- gemini-pro <- 速度最快，质量不输太多
+
+### 手动
+
+- 安装依赖：`yarn`
+- 配置环境变量：`cp .env.sample .env`，**接着修改 .env 文件中的变量**
+- 将待翻译csv直接放入`tmp/untranslated`文件夹
+- 运行预翻译脚本：`yarn translate:folder`,翻译完成的文件会放入`tmp/translated`文件夹中
+- 运行路径助手脚本：`yarn move`，翻译完成的文件会被放入`data`文件夹中
+- 提交文件即可
