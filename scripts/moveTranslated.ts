@@ -1,7 +1,7 @@
 import fs from "fs-extra";
 import { extractInfoFromCsvText } from "../src/csv";
 import log from "loglevel";
-import { setupEnv } from "../src/setupEnv";
+import { setupLog } from "../src/setup-env";
 import { dirname } from 'path'
 
 function moveTranslatedFiles(
@@ -36,5 +36,5 @@ function moveTranslatedFiles(
   });
 }
 
-setupEnv();
+setupLog();
 moveTranslatedFiles();

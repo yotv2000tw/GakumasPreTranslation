@@ -18,17 +18,21 @@
 
 ## 如何使用
 
-可选模型：
-
-- claude-3-opus-20240229 <- 速度比gpt4稍快
-- gpt-4-1106-preview
-- gemini-pro <- 速度最快，质量不输太多
-
 ### 手动
 
 - 安装依赖：`yarn`
 - 配置环境变量：`cp .env.sample .env`，**接着修改 .env 文件中的变量**
-- 将待翻译csv直接放入`tmp/untranslated`文件夹
-- 运行预翻译脚本：`yarn translate:folder`,翻译完成的文件会放入`tmp/translated`文件夹中
-- 运行路径助手脚本：`yarn move`，翻译完成的文件会被放入`data`文件夹中
+- 执行翻译
+  - 将待翻译csv直接放入`tmp/untranslated`文件夹，运行预翻译脚本：`yarn translate:folder`,翻译完成的文件会放入`tmp/translated`文件夹中
+  - 或运行 `yarn translate:latest` 翻译服务器最新更新的文件
+- 运行路径助手脚本：`yarn move`，翻译完成的文件（`tmp/translated`）会被放入`data`文件夹中
 - 提交文件即可
+
+## 模型
+
+可选模型：
+
+- claude-3-opus-20240229 <- 速度比gpt4稍快
+- gpt-4-0125-preview / gpt-4-turbo-preview
+- gpt-3.5-turbo-0125 / gpt-3.5-turbo
+- gemini-pro
