@@ -32,8 +32,14 @@
 
 ### OPENAI_BASE_URL
 
+境内推荐
+
+- AiHubMix: API 中转服务，便于切换模型 https://aihubmix.com/
+- moonshot：kimichat。只支持moonshot的系列模型。 https://api.moonshot.cn
+
 ### OPENAI_API_KEY
-OPENAI_BASE_URL=https://aihubmix.com/
+
+从对应API端点获取
 
 ### MODEL
 
@@ -41,6 +47,9 @@ OPENAI_BASE_URL=https://aihubmix.com/
 
 - gemini-pro <-推荐1，速度快，质量高，收费较低
 - moonshot-v1-8k <- 推荐2，速度快，质量高，收费较低
+- claude-3-haiku-20240307 <- 推荐3，速度快，质量不错，收费低。不过目前的prompt可能不是完全适配这个模型，翻译出来的内容稍显生硬。
+
+- gpt-3.5-turbo-0125 / gpt-3.5-turbo <- 可选，速度快，质量也不错
+- claude-3-sonnet-20240229 <- 不推荐。质量、速度、收费其实都不错，但是容易过于谨慎拒绝回复。
 - gpt-4-0125-preview / gpt-4-turbo-preview <- 不推荐，质量高，但是速度极慢。贵。
 - claude-3-opus-20240229 <- <- 不推荐，质量高，速度比gpt4稍快，但仍然很慢。贵。
-- gpt-3.5-turbo-0125 / gpt-3.5-turbo <- 可选，速度快，质量也不错

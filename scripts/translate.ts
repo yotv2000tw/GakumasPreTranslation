@@ -59,7 +59,7 @@ async function translateRemoteDiff(
   skipExisted: boolean = true
 ) {
   const jsonPathList = await getJsonPathList(diffEndpoint);
-  log.log("Found " + jsonPathList.length + " json files in latest diff to translate")
+  log.info("Found " + jsonPathList.length + " json files in latest diff to translate")
 
   for (const jsonPath of jsonPathList) {
     log.info("Translating " + jsonPath);
@@ -107,13 +107,13 @@ async function main() {
 
   const config = getLLMConfig();
   if (opts.type === "folder") {
-    log.log("Source File Directory:", opts.dir)
-    log.log("overwrite files:", opts.overwrite);
+    log.info("Source File Directory:", opts.dir)
+    log.info("overwrite files:", !!opts.overwrite);
     await translateFolder(config, opts.dir, undefined, !opts.overwrite);
   } else if (opts.type === "remote-diff") {
     const { diffEndpoint, assetEndpoint } = getRemoteEndpoint();
-    log.log("Remote Diff Endpoint:", `${diffEndpoint}?latest=${opts.tag}`)
-    log.log("overwrite files:", opts.overwrite)
+    log.info("Remote Diff Endpoint:", `${diffEndpoint}?latest=${opts.tag}`)
+    log.info("overwrite files:", !!opts.overwrite)
     await translateRemoteDiff(
       config,
       `${diffEndpoint}?latest=${opts.tag}`,

@@ -3,3 +3,4 @@ pretranslation
 tmp/*
 node_modules/
 .env
+.DS_STORE

@@ -14,6 +14,7 @@ export interface LLMConfig {
   apiKey: string;
   baseURL: string;
   model: string;
+  max_tokens: number;
 }
 
 export async function translateCsvString(
@@ -80,6 +81,7 @@ async function chat(
     apiKey,
     baseURL,
     model,
+    max_tokens,
   }: LLMConfig
 ) {
   try {
@@ -90,7 +92,7 @@ async function chat(
         Authorization: `Bearer ${apiKey}`,
       },
     });
-    log.log(`Sending request to ${model} API, please wait...`);
+    log.info(`Sending request to ${model} API, please wait...`);
     const response = await openai.post(
       "/v1/chat/completions",
       {
@@ -102,7 +104,7 @@ async function chat(
           { role: "user", content: userInput },
         ],
         temperature: 0.5,
-        max_tokens: 6000,
+        max_tokens,
       },
       {
         timeout: 180000,
