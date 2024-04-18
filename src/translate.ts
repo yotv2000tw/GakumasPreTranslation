@@ -22,7 +22,7 @@ export async function translateCsvString(
   config: LLMConfig
 ): Promise<string> {
   const csvTextInfo = extractInfoFromCsvText(csvText);
-  await translateCsvTextInfo(csvTextInfo, config);
+  await translateCsvTextInfo(csvTextInfo, config, 1);
   return toCsvText(csvTextInfo);
 }
 
@@ -31,15 +31,28 @@ export async function translateJsonDataToCsvString(data: any[], jsonPath: string
 }
 
 // will modify csvTextInfo
-async function translateCsvTextInfo(csvTextInfo: CsvTextInfo, config: LLMConfig) {
+async function translateCsvTextInfo(csvTextInfo: CsvTextInfo, config: LLMConfig, leftRetry=0) {
   const userInput = DialogueListDeser.serialize(csvTextInfo.data)
   const gptOutput = await chat(userInput, config)
   const translatedDialogues = DialogueListDeser.deserialize(gptOutput)
+  if (csvTextInfo.data.length != translatedDialogues.length) {
+    log.error(`Error: length of data (${csvTextInfo.data.length}) and translatedDialogues (${translatedDialogues.length}) is not equal`)
+    if (leftRetry > 0) {
+      log.info(`Retrying...`)
+      return await translateCsvTextInfo(csvTextInfo, config, leftRetry - 1)
+    }
+    throw new Error("error: length of data and translatedDialogues is not equal")
+  }
   for (let index = 0; index < translatedDialogues.length; index++) {
     const dialogue = translatedDialogues[index];
     if (dialogue == undefined) {
       log.error(`Error: dialogue is undefined at index ${index}`)
       continue
+    }
+    if (csvTextInfo.data[index] == undefined) {
+      log.error(`Error: data is undefined at index ${index}`)
+      log.error(csvTextInfo)
+      throw new Error("error: data is undefined at index")
     }
     csvTextInfo.data[index].trans = dialogue.text
   }
