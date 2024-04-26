@@ -3,6 +3,8 @@ import md5 from 'md5-file'
 import path from 'path'
 import { extractInfoFromCsvText } from '../src/csv'
 
+const DOMAIN = 'ai.shiny.fun'
+
 const findCsv = (dir: string) => {
   const results = fs.readdirSync(dir)
   let files: string[] = []
@@ -18,10 +20,14 @@ const findCsv = (dir: string) => {
   return files
 }
 
+const addCustonDomain = () => {
+  fs.outputFileSync('./dist/CNAME', DOMAIN)
+}
+
 const deployCSV = async () => {
   await fs.emptyDir('./dist/story/')
+
   const files = findCsv('./data').filter((file) => file.endsWith('.csv'))
-    console.log(files)
   const prims = files.map(async file => {
     const text = await fs.readFile(file, 'utf-8')
     const { jsonUrl } = extractInfoFromCsvText(text)
@@ -33,6 +39,8 @@ const deployCSV = async () => {
   })
   const result = await Promise.all(prims)
   await fs.writeJSON('./dist/story.json', result)
+
+  addCustonDomain()
 }
 
 deployCSV()
