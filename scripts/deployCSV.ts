@@ -13,7 +13,7 @@ const findCsv = (dir: string) => {
     const stats = fs.statSync(file)
     if (stats.isDirectory()) {
       files = files.concat(findCsv(file))
-    } else {
+    } else if (file.endsWith('.csv')) {
       files.push(file)
     }
   }
@@ -27,7 +27,7 @@ const addCustonDomain = () => {
 const deployCSV = async () => {
   await fs.emptyDir('./dist/story/')
 
-  const files = findCsv('./data').filter((file) => file.endsWith('.csv'))
+  const files = findCsv('./data')
   const prims = files.map(async file => {
     const text = await fs.readFile(file, 'utf-8')
     const { jsonUrl } = extractInfoFromCsvText(text)
