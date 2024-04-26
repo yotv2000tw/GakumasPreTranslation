@@ -17,13 +17,45 @@ export interface LLMConfig {
   max_tokens: number;
 }
 
+function splitCsvInfo(csvTextInfo: CsvTextInfo, batchNum: number){
+  const batchSize = Math.ceil(csvTextInfo.data.length / batchNum)
+  const rtn: CsvTextInfo[] = []
+  for (let index = 0; index < batchNum; index++) {
+    const startIndex = index * batchSize
+    const endIndex = (index + 1) * batchSize
+    rtn.push({
+      data: csvTextInfo.data.slice(startIndex, Math.min(endIndex, csvTextInfo.data.length)),
+      translator: csvTextInfo.translator,
+      jsonUrl: csvTextInfo.jsonUrl,
+    })
+  }
+  return rtn
+}
+
+function mergeCsvInfo(csvTextInfos: CsvTextInfo[]){
+  const rtn: CsvTextInfo = {
+    data: [],
+    translator: csvTextInfos[0].translator,
+    jsonUrl: csvTextInfos[0].jsonUrl,
+  }
+  for (let index = 0; index < csvTextInfos.length; index++) {
+    const csvTextInfo = csvTextInfos[index];
+    rtn.data.push(...csvTextInfo.data)
+  }
+  return rtn
+}
+
 export async function translateCsvString(
   csvText: string,
-  config: LLMConfig
+  config: LLMConfig,
+  maxBatchSize: number = 60,
 ): Promise<string> {
   const csvTextInfo = extractInfoFromCsvText(csvText);
-  await translateCsvTextInfo(csvTextInfo, config, 1);
-  return toCsvText(csvTextInfo);
+  const batchNum = Math.ceil(csvTextInfo.data.length / maxBatchSize)
+  log.info(`Splitting csvTextInfo into ${batchNum} batches`)
+  const csvTextInfos = splitCsvInfo(csvTextInfo, batchNum)
+  await Promise.all(csvTextInfos.map(csvTextInfo => translateCsvTextInfo(csvTextInfo, config)))
+  return toCsvText(mergeCsvInfo(csvTextInfos));
 }
 
 export async function translateJsonDataToCsvString(data: any[], jsonPath: string, config: LLMConfig): Promise<string> {
