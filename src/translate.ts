@@ -148,7 +148,7 @@ async function chat(
           // {'role': 'assistant', content: exampleOutput},
           { role: "user", content: userInput },
         ],
-        temperature: 0.5,
+        temperature: 0.7,
         max_tokens,
       },
       {
