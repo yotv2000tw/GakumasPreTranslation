@@ -5,43 +5,56 @@ import { LLMConfig, translateCsvString, translateJsonDataToCsvString } from "../
 import { getLLMConfig, setupLog, getRemoteEndpoint } from "../src/setup-env"
 import { program } from "commander";
 import axios from "axios";
+import { walkSync } from "@nodelib/fs.walk";
+import { extractInfoFromCsvText } from "../src/csv";
 
 // translate files in tmp
 async function translateFolder(
-  config: LLMConfig,
-  folder: string = "./tmp/untranslated",
-  destFolder: string = "./tmp/translated",
-  skipExisted: boolean = true
+  config,
+  folder = "./tmp/untranslated",
+  destFolder = "./tmp/translated",
+  skipExisted = true
 ) {
-  const fileList = fs
-    .readdirSync(folder)
-    .filter((file) => file.endsWith(".json") || file.endsWith(".csv"));
-  log.info("Found " + fileList.length + " files to translate");
+  const files = [];
+  const entrys = walkSync(folder);
 
-  for (const file of fileList) {
-    log.info("Translating " + file);
-    const filePath = resolve(folder, file);
-    
-    if (file.endsWith(".json")) {
+  for await (const entry of entrys) {
+    if (entry.name.endsWith(".csv")) files.push(entry);
+  }
+
+  log.info("Found " + files.length + " csv files to translate");
+
+  for (const entry of files) {
+    log.info("Translating " + entry.name);
+    const filePath = entry.path;
+
+    if (entry.name.endsWith(".json")) {
       log.warn("JSON file is currently not supported");
       continue;
     }
 
-    const destPath = resolve(destFolder, file);
+    const csvString = await fs.promises.readFile(filePath, "utf-8");
+    const csvInfo = extractInfoFromCsvText(csvString);
+
+    const destPath = resolve(destFolder, csvInfo.jsonUrl.replace(".txt", ".csv"));
     if (skipExisted && fs.existsSync(destPath)) {
       log.info(`Skipped ${destPath} because of file existence`);
       continue;
     }
 
-    if (file.endsWith(".csv")) {
-      const csvString = await fs.readFile(filePath, "utf-8");
-      const translatedCsvString = await translateCsvString(csvString, config);
-      await fs.writeFile(
-        destPath,
-        translatedCsvString,
-        "utf-8"
-      );
-      log.info(`Output to ${destPath}`);
+    if (entry.name.endsWith(".csv")) {
+      try {
+        const translatedCsvString = await translateCsvString(csvString, config);
+
+        await fs.promises.writeFile(
+          destPath,
+          translatedCsvString,
+          "utf-8"
+        );
+        log.info(`Output to ${destPath}`);
+      } catch (error) {
+        log.error(`failed to translate ${entry.path}`)
+      }
     }
   }
 }
@@ -97,11 +110,11 @@ async function main() {
       "--tag <tag>",
       "the version of the remote-diff, only activated when type is remote-diff",
       "-1"
-  )
+    )
     .option(
       "--overwrite",
       "whether to overwrite translation if a translated file already exists, default to false (skip files)",
-  )
+    )
   await program.parseAsync(process.argv);
   const opts = program.opts();
 
