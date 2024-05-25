@@ -18,7 +18,7 @@ function moveTranslatedFiles(
       fs.readFileSync(`${srcFolder}/${file}`, "utf-8")
     ).jsonUrl;
     const fileShouldPath = `${destFolder}/${fullJsonPath.replace(
-      ".json",
+      ".txt",
       ".csv"
     )}`;
 
