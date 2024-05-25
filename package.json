@@ -27,8 +27,6 @@
   },
   "scripts": {
     "translate:folder": "ts-node ./scripts/translate.ts --type folder",
-    "translate:latest": "ts-node ./scripts/translate.ts --type remote-diff",
-    "move": "ts-node ./scripts/moveTranslated.ts",
-    "deploy:csv": "ts-node ./scripts/deployCSV.ts"
+    "move": "ts-node ./scripts/moveTranslated.ts"
   }
 }
