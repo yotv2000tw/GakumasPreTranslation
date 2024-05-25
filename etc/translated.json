@@ -1379,6 +1379,10 @@
     "japanese": "https://bnfaq.channel.or.jp/title/3043",
     "chinese": "https://bnfaq.channel.or.jp/title/3043"
   },
+  "title.cache_clear.description": {
+    "japanese": "キャッシュデータを削除すると動作が軽くなることが\\nあります。\\nプレイ中のゲームデータは削除されません。\\nキャッシュデータをクリアしてもよろしいですか？",
+    "chinese": "删除缓存数据可能会使运行变得更流畅。\\n游戏中的数据不会被删除。\\n确定要清除缓存数据吗？"
+  },
   "title.cache_clear.toast": {
     "japanese": "キャッシュデータを削除しました",
     "chinese": "已删除缓存数据"
@@ -1947,6 +1951,10 @@
     "japanese": " 所持上限数を超えた分のPドリンクは受け取れません。\\n選択してよろしいですか？",
     "chinese": " 超过持有上限的P饮料无法领取。\\n是否选择？"
   },
+  "produce.event.item_get_confirm": {
+    "japanese": " すでに所持しているPアイテムは獲得することができません。\\n選択してよろしいですか？",
+    "chinese": " 已持有的P道具无法获得。\\n确定选择吗？"
+  },
   "produce.event.card_upgrade_confirm": {
     "japanese": " 発動しないスキルカード強化効果があります。次に進みますか？",
     "chinese": " 有不会生效的技能卡强化效果。是否继续？"
@@ -2046,6 +2054,234 @@
   "produce.drink.use": {
     "japanese": " 使う",
     "chinese": " 使用"
+  },
+  "produce.drink.trash_confirm": {
+    "japanese": " 廃棄確認",
+    "chinese": " 丢弃确认"
+  },
+  "produce.drink.trash_confirm_description": {
+    "japanese": " 本当に{0}を捨てますか？",
+    "chinese": " 真的要丢弃{0}吗？"
+  },
+  "produce.drink.cannot_use.noneproduceeffect": {
+    "japanese": "レッスンと試験以外では使用できません",
+    "chinese": "不能在课程和考试之外使用"
+  },
+  "produce.drink.cannot_use.staminamax": {
+    "japanese": "体力がすでに最大です",
+    "chinese": "体力已经达到最大值"
+  },
+  "produce.drink.cannot_use.notarget": {
+    "japanese": "対象のスキルカードがありません。",
+    "chinese": "没有目标技能卡。"
+  },
+  "produce.drink.cannot_use.handmax": {
+    "japanese": "手札のスキルカードが上限に達しています。",
+    "chinese": "手中的技能卡已达上限。"
+  },
+  "produce.drink.cannot_use.alreadyfullpower": {
+    "japanese": "指針はすでに全力です",
+    "chinese": "指针已经全力"
+  },
+  "produce.drink.cannot_use.alreadyconcentration": {
+    "japanese": "指針はすでに集中です",
+    "chinese": "指针已经集中"
+  },
+  "produce.drink.cannot_use.alreadypreservation": {
+    "japanese": "指針はすでに温存です",
+    "chinese": "指针已经保持"
+  },
+  "produce.present.skip.exam": {
+    "japanese": " 報酬スキップ",
+    "chinese": " 奖励跳过"
+  },
+  "produce.present.skip": {
+    "japanese": " 活動支給スキップ",
+    "chinese": " 活动奖励跳过"
+  },
+  "produce.present.skip_confirm": {
+    "japanese": " 対象の{0}を獲得せず次へ進みますか？",
+    "chinese": " 跳过并不获取目标{0}继续吗？"
+  },
+  "produce.present.achieve": {
+    "japanese": " {0}獲得",
+    "chinese": " 获得{0}"
+  },
+  "produce.refresh.title": {
+    "japanese": "休み確認",
+    "chinese": "休息确认"
+  },
+  "produce.refresh.confirm": {
+    "japanese": "休んで体力を回復させますか？\\n（体力が<color=#u:Positive>{0}</color>回復し、<color=#u:Negative>1週経過</color>します）",
+    "chinese": " 休息并恢复体力吗？\\n（体力将恢复<color=#u:Positive>{0}</color>，<color=#u:Negative>1周过去</color>）"
+  },
+  "produce.refresh.stamina.max": {
+    "japanese": " 体力は最大です",
+    "chinese": " 体力已满"
+  },
+  "produce.refresh.button": {
+    "japanese": "休む",
+    "chinese": "休息"
+  },
+  "produce.confirm_stamina_sheet.title": {
+    "japanese": " レッスン開始確認",
+    "chinese": " 课程开始确认"
+  },
+  "produce.confirm_stamina_sheet.description": {
+    "japanese": "体力が低下しています\\nレッスンを開始しますか？",
+    "chinese": " 体力已下降\\n开始课程吗？"
+  },
+  "produce.confirm_stamina_sheet.button": {
+    "japanese": " 開始する",
+    "chinese": " 开始"
+  },
+  "produce.confirm_point_sheet.title": {
+    "japanese": " 相談開始確認",
+    "chinese": " 咨询开始确认"
+  },
+  "produce.confirm_point_sheet.description": {
+    "japanese": "Pポイントが少ないですが相談してもよろしいですか？\\n<color=#u:Negative>何もできない場合があります</color>",
+    "chinese": "P点数较少，确定要咨询吗？\\n<color=#u:Negative>可能什么都做不了</color>"
+  },
+  "produce.confirm_point_sheet.button": {
+    "japanese": " 相談する",
+    "chinese": " 咨询"
+  },
+  "produce.confirm_reroll_sheet.title": {
+    "japanese": " スキルカード再抽選確認",
+    "chinese": " 技能卡重新抽选确认"
+  },
+  "produce.confirm_reroll_sheet.description": {
+    "japanese": "獲得可能なスキルカードの候補を再抽選しますか？\\n<color=#u:Negative>プロデュース中の再抽選可能回数には制限があります</color>",
+    "chinese": "重新抽选可获得的技能卡候选吗？\\n<color=#u:Negative>培育期间的重新抽选次数有限</color>"
+  },
+  "produce.confirm_reroll_sheet.value_title": {
+    "japanese": "再抽選可能回数",
+    "chinese": "重新抽选次数"
+  },
+  "produce.confirm_reroll_sheet.value": {
+    "japanese": "プロデュース中にあと{0}回",
+    "chinese": "培育期间还可{0}次"
+  },
+  "produce.confirm_reroll_sheet.button": {
+    "japanese": " 再抽選する",
+    "chinese": " 重新抽选"
+  },
+  "produce.confirm_limit_parameter_sheet.lesson.title": {
+    "japanese": "レッスンパラメータ上限",
+    "chinese": "课程参数上限"
+  },
+  "produce.confirm_limit_parameter_sheet.lesson.description": {
+    "japanese": "選択したレッスンで上昇するパラメータは\\nすでに上限に到達しています。\\nレッスンを開始してよろしいですか？",
+    "chinese": "选择的课程所提升的参数\\n已经达到上限。\\n确定开始课程吗？"
+  },
+  "produce.confirm_limit_parameter_sheet.lesson.button": {
+    "japanese": " 開始する",
+    "chinese": " 开始"
+  },
+  "produce.confirm_limit_parameter_sheet.effect.title": {
+    "japanese": "パラメータ上限",
+    "chinese": "参数上限"
+  },
+  "produce.confirm_limit_parameter_sheet.effect.description": {
+    "japanese": "選択した選択肢で上昇するパラメータは\\nすでに上限に到達しています。\\n選択してよろしいですか？",
+    "chinese": "选择的选项所提升的参数\\n已经达到上限。\\n确定选择吗？"
+  },
+  "produce.confirm_limit_parameter_sheet.effect.button": {
+    "japanese": " 選択する",
+    "chinese": " 选择"
+  },
+  "produce.upgrade.confirm": {
+    "japanese": " スキルカード<color=#u:Positive>{0}</color>枚を強化しますか？",
+    "chinese": " 确定要强化<color=#u:Positive>{0}</color>张技能卡吗？"
+  },
+  "produce.upgrade.description": {
+    "japanese": " このスキルカードを強化しますか？",
+    "chinese": " 确定要强化这张技能卡吗？"
+  },
+  "produce.shop.buy": {
+    "japanese": " Pポイントを使用して交換しますか？",
+    "chinese": " 使用P点数兑换吗？"
+  },
+  "produce.shop.upgrade_name": {
+    "japanese": " スキルカード強化",
+    "chinese": " 技能卡强化"
+  },
+  "produce.shop.delete_name": {
+    "japanese": " スキルカード削除",
+    "chinese": " 技能卡删除"
+  },
+  "produce.shop.upgrade_description": {
+    "japanese": "所持しているスキルカードを\\n1枚強化できます。",
+    "chinese": " 可以强化一张持有的技能卡。"
+  },
+  "produce.shop.delete_description": {
+    "japanese": "所持しているスキルカードを\\n1枚削除できます。",
+    "chinese": "可以删除一张持有的技能卡。"
+  },
+  "produce.shop.upgrade": {
+    "japanese": " Pポイントを使用してスキルカードを強化しますか？",
+    "chinese": " 使用P点数强化技能卡吗？"
+  },
+  "produce.shop.delete": {
+    "japanese": " Pポイントを使用してスキルカードを削除しますか？",
+    "chinese": " 使用P点数删除技能卡吗？"
+  },
+  "produce.hand.select": {
+    "japanese": "手札に加えるスキルカードを",
+    "chinese": " 选择加入手牌的技能卡"
+  },
+  "produce.deck_first.select": {
+    "japanese": " 山札の一番上に置くスキルカードを",
+    "chinese": " 选择放在牌堆顶的技能卡"
+  },
+  "produce.deck_last.select": {
+    "japanese": " 山札の一番下に置くスキルカードを",
+    "chinese": " 选择放在牌堆底的技能卡"
+  },
+  "produce.deck.select": {
+    "japanese": " 山札に加えるスキルカードを",
+    "chinese": " 选择加入牌堆的技能卡"
+  },
+  "produce.grave.select": {
+    "japanese": "使用済みにするスキルカードを",
+    "chinese": " 选择变为已使用的技能卡"
+  },
+  "produce.lost.select": {
+    "japanese": " 除外済みにするスキルカードを",
+    "chinese": " 选择变为已除外的技能卡"
+  },
+  "produce.upgrade.select": {
+    "japanese": " 強化するスキルカードを",
+    "chinese": " 选择要强化的技能卡"
+  },
+  "produce.change.select": {
+    "japanese": " 変化させるスキルカードを",
+    "chinese": " 选择要改变的技能卡"
+  },
+  "produce.add.select": {
+    "japanese": " 取得するスキルカードを",
+    "chinese": " 选择要获取的技能卡"
+  },
+  "produce.remove.select": {
+    "japanese": " 削除するスキルカードを",
+    "chinese": " 选择要删除的技能卡"
+  },
+  "produce.duplicate.select": {
+    "japanese": " コピーするスキルカードを",
+    "chinese": " 选择要复制的技能卡"
+  },
+  "produce.common.select": {
+    "japanese": " スキルカードを",
+    "chinese": " 选择技能卡"
+  },
+  "produce.upgrade.select.title": {
+    "japanese": "強化",
+    "chinese": "强化"
+  },
+  "produce.remove.select.title": {
+    "japanese": "削除",
+    "chinese": "删除"
   },
   "produce.change.select.title": {
     "japanese": "チェンジ",
@@ -2350,6 +2586,62 @@
   "produce.effect.turn_suffix": {
     "japanese": "ターン",
     "chinese": "回合"
+  },
+  "produce.upgrade.result": {
+    "japanese": " {0}枚のスキルカードを強化しました。",
+    "chinese": " 已强化{0}张技能卡。"
+  },
+  "produce.change.result": {
+    "japanese": " {0}枚のスキルカードを変化させました。",
+    "chinese": " {0}枚的技能卡已变更。"
+  },
+  "produce.add.result": {
+    "japanese": " {0}枚のスキルカードを獲得しました。",
+    "chinese": " {0}枚的技能卡已获得。"
+  },
+  "produce.remove.result": {
+    "japanese": " {0}枚のスキルカードを削除しました。",
+    "chinese": " {0}枚的技能卡已删除。"
+  },
+  "produce.duplicate.result": {
+    "japanese": " {0}枚のスキルカードをコピーしました。",
+    "chinese": " {0}枚的技能卡已复制。"
+  },
+  "produce.concat_card": {
+    "japanese": " と",
+    "chinese": " 和"
+  },
+  "produce.upgrade.message.result": {
+    "japanese": " {0}を強化しました",
+    "chinese": " {0}已强化。"
+  },
+  "produce.delete.message.result": {
+    "japanese": " を削除しました",
+    "chinese": " 已删除。"
+  },
+  "produce.duplicate.message.result": {
+    "japanese": " {0}を{1}枚コピーしました",
+    "chinese": " {0}已复制{1}枚。"
+  },
+  "produce.duplicate_upgrade.message.result": {
+    "japanese": " {0}を{1}枚コピーして強化しました",
+    "chinese": " {0}已复制{1}枚并强化。"
+  },
+  "produce.change.message.result": {
+    "japanese": " {0}を{1}に変換しました",
+    "chinese": " {0}已转换为{1}。"
+  },
+  "produce.change_upgrade.message.result": {
+    "japanese": " {0}を{1}に変換して強化しました",
+    "chinese": " {0}已转换为{1}并强化。"
+  },
+  "produce.shop.empty": {
+    "japanese": " Pポイントと交換するものを選んでください",
+    "chinese": " 请选择用P点数交换的物品。"
+  },
+  "produce.shop.exchange.button": {
+    "japanese": " 交換",
+    "chinese": " 交换。"
   },
   "produce.shop.end_warning.title": {
     "japanese": "相談終了確認",
@@ -10708,36 +11000,36 @@
     "chinese": "确定"
   },
   "guild.member": {
-    "japanese": "メンバー",
-    "chinese": "成员"
+    "japanese": " メンバー",
+    "chinese": " 成员"
   },
   "guild.policy": {
-    "japanese": "活動方針",
-    "chinese": "活动方针"
+    "japanese": " 活動方針",
+    "chinese": " 活动方针"
   },
   "guild.policy.policy_1": {
-    "japanese": "自由にプレイ",
-    "chinese": "自由游戏"
+    "japanese": " 自由にプレイ",
+    "chinese": " 自由游戏"
   },
   "guild.policy.policy_2": {
-    "japanese": "まったりプレイ",
-    "chinese": "悠闲游戏"
+    "japanese": " まったりプレイ",
+    "chinese": " 悠闲游戏"
   },
   "guild.policy.policy_3": {
-    "japanese": "がっつりプレイ",
-    "chinese": "全力游戏"
+    "japanese": " がっつりプレイ",
+    "chinese": " 全力游戏"
   },
   "guild.policy.policy_4": {
-    "japanese": "毎日ログイン",
-    "chinese": "天天登录"
+    "japanese": " 毎日ログイン",
+    "chinese": " 天天登录"
   },
   "guild.policy.policy_5": {
-    "japanese": "初心者歓迎",
-    "chinese": "欢迎新人"
+    "japanese": " 初心者歓迎",
+    "chinese": " 欢迎新人"
   },
   "guild.policy.policy_6": {
-    "japanese": "コンテスト上位狙い",
-    "chinese": "争取竞赛上位"
+    "japanese": " コンテスト上位狙い",
+    "chinese": " 争取竞赛上位"
   },
   "guild.approve_flow.auto": {
     "japanese": " 自動承認",
