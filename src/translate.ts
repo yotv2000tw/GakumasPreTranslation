@@ -120,7 +120,7 @@ const DialogueListDeser = {
   }
 }
 
-async function chat(
+export async function chat(
   userInput: string,
   {
     apiKey,
