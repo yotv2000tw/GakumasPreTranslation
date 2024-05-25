@@ -165,6 +165,7 @@ async function main() {
   setupLog()
   const sourcePath = "./etc/Localization.txt"
   const targetPath = "./etc/translated.json"
+  const distPath = "./etc/localization.json"
   const config = getLLMConfig()
 
   // initialization
@@ -197,7 +198,14 @@ async function main() {
     })
     untranslated = countUntranslatedLines(l10nObj)
   }
-
+  const tmp = {}
+  Object.keys(l10nObj).forEach((key) => {
+    tmp[key] = l10nObj[key].chinese
+  })
+  writeJSONSync(distPath, tmp, {
+    "encoding": "utf-8",
+    "spaces": 2,
+  })
 }
 
 main()
