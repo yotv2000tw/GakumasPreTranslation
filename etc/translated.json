@@ -9005,7 +9005,7 @@
   },
   "roster.dearness_label": {
     "japanese": "\"親愛度 {0}/{1}\"",
-    "chinese": "\"亲爱度 {0}/{1}\""
+    "chinese": "\"亲密度 {0}/{1}\""
   },
   "roster.community_label": {
     "japanese": "\"親愛度コミュ 第{0}話\"",
@@ -10397,7 +10397,7 @@
   },
   "story.idol.tab.dearness": {
     "japanese": "親愛度",
-    "chinese": "亲爱度"
+    "chinese": "亲密度"
   },
   "story.idol.tab.produce": {
     "japanese": "プロデュース",
@@ -10413,7 +10413,7 @@
   },
   "story.idol.dearness.level": {
     "japanese": "親愛度Lv",
-    "chinese": "亲爱度Lv"
+    "chinese": "亲密度Lv"
   },
   "story.idol.dearness.report": {
     "japanese": "レポート",
@@ -10541,7 +10541,7 @@
   },
   "story.dearness_unlock_sheet.title": {
     "japanese": "親愛度コミュ解放",
-    "chinese": "亲爱度回忆解放"
+    "chinese": "亲密度回忆解放"
   },
   "story.dearness_unlock_sheet.description": {
     "japanese": "新しいコミュを解放しました。再生しますか？",
@@ -10629,7 +10629,7 @@
   },
   "story.header.story_type.dearness": {
     "japanese": "親愛度",
-    "chinese": "亲爱度"
+    "chinese": "亲密度"
   },
   "adv.button.auto_none": {
     "japanese": "AUTO",
