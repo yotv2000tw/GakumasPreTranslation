@@ -13,10 +13,19 @@ async function translateFolder(
   config,
   folder = "./tmp/untranslated",
   destFolder = "./tmp/translated",
-  skipExisted = true
+  skipExisted = true,
+  indexFile?: string, // ./index.json
 ) {
   const files = [];
   const entrys = walkSync(folder);
+
+  let indexFileContent: { [key: string]: string } = {}
+  
+  if (indexFile) {
+    indexFileContent = fs.readJsonSync(indexFile)
+    log.info("Found " + Object.keys(indexFileContent).length + " csv files in index file")
+  }
+
 
   for await (const entry of entrys) {
     if (entry.name.endsWith(".csv")) files.push(entry);
@@ -35,6 +44,11 @@ async function translateFolder(
 
     const csvString = await fs.promises.readFile(filePath, "utf-8");
     const csvInfo = extractInfoFromCsvText(csvString);
+
+    if (indexFileContent[csvInfo.jsonUrl]) {
+      log.info(`Skipped ${csvInfo.jsonUrl} because of file already translated`);
+      continue;
+    }
 
     const destPath = resolve(destFolder, csvInfo.jsonUrl.replace(".txt", ".csv"));
     if (skipExisted && fs.existsSync(destPath)) {
@@ -105,7 +119,7 @@ async function main() {
       "--dir <dir>",
       "the source directory where the files are located, only activated when type is folder",
       "./tmp/untranslated"
-    )
+  )
     .option(
       "--tag <tag>",
       "the version of the remote-diff, only activated when type is remote-diff",
@@ -114,6 +128,15 @@ async function main() {
     .option(
       "--overwrite",
       "whether to overwrite translation if a translated file already exists, default to false (skip files)",
+  )
+    .option(
+      "--indexfile <index-file>",
+      "the index file used to ignore translated files",
+      "./index.json"
+  )
+    .option(
+      "--ignoreindex",
+      "whether to ignore index files, default to false (always consider index file)",
     )
   await program.parseAsync(process.argv);
   const opts = program.opts();
@@ -122,7 +145,9 @@ async function main() {
   if (opts.type === "folder") {
     log.info("Source File Directory:", opts.dir)
     log.info("overwrite files:", !!opts.overwrite);
-    await translateFolder(config, opts.dir, undefined, !opts.overwrite);
+    log.info("ignore index:", opts.ignoreindex);
+    log.info("using index file:", opts.ignoreindex ? undefined : opts.indexfile);
+    await translateFolder(config, opts.dir, opts.dest, !opts.overwrite, opts.ignoreindex?undefined:opts.indexfile);
   } else if (opts.type === "remote-diff") {
     const { diffEndpoint, assetEndpoint } = getRemoteEndpoint();
     log.info("Remote Diff Endpoint:", `${diffEndpoint}?latest=${opts.tag}`)
