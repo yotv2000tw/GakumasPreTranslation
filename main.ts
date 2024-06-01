@@ -87,7 +87,7 @@ interface LocalizatonObj {
 
 function parseCsvFormatLocalization(txt: string): { [key: string]: string } {
   const obj = {}
-  txt.split("\n").forEach((line) => {
+  txt.replaceAll("\r\n", "\n").split("\n").forEach((line) => {
     if (line.startsWith("KEY,Japanese")) {
       return
     }
@@ -109,7 +109,7 @@ function parseCsvFormatLocalization(txt: string): { [key: string]: string } {
 function countUntranslatedLines(lFile: LocalizatonObj) {
   let count = 0
   for (const key of Object.keys(lFile)) {
-    if (lFile[key].chinese === "") {
+    if (key !== "" && lFile[key].chinese === "") {
       count += 1
     }
   }
