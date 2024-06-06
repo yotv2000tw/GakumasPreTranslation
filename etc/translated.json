@@ -969,7 +969,7 @@
   },
   "common.live_battle_stage.op.description": {
     "japanese": "OPステージに編成されるとパラメータが強化される",
-    "chinese": "在OP舞台中编入后，参数将得到强化"
+    "chinese": "在OP舞台中编入后，数值将得到强化"
   },
   "common.live_battle_stage.mid": {
     "japanese": "MID",
@@ -981,7 +981,7 @@
   },
   "common.live_battle_stage.mid.description": {
     "japanese": "MIDステージに編成されるとパラメータが強化される",
-    "chinese": "在MID舞台中编入后，参数将得到强化"
+    "chinese": "在MID舞台中编入后，数值将得到强化"
   },
   "common.live_battle_stage.ed": {
     "japanese": "ED",
@@ -993,7 +993,7 @@
   },
   "common.live_battle_stage.ed.description": {
     "japanese": "EDステージに編成されるとパラメータが強化される",
-    "chinese": "在ED舞台中编入后，参数将得到强化"
+    "chinese": "在ED舞台中编入后，数值将得到强化"
   },
   "common.live_battle_type.scorer.name": {
     "japanese": "スコアタイプ",
@@ -1729,7 +1729,7 @@
   },
   "produce.info.status": {
     "japanese": "アイドルパラメータ詳細",
-    "chinese": "偶像参数详情"
+    "chinese": "偶像数值详情"
   },
   "produce.info.remain_week_prefix": {
     "japanese": "{0}まであと",
@@ -2169,11 +2169,11 @@
   },
   "produce.confirm_limit_parameter_sheet.lesson.title": {
     "japanese": "レッスンパラメータ上限",
-    "chinese": "课程参数上限"
+    "chinese": "课程数值上限"
   },
   "produce.confirm_limit_parameter_sheet.lesson.description": {
     "japanese": "選択したレッスンで上昇するパラメータは\\nすでに上限に到達しています。\\nレッスンを開始してよろしいですか？",
-    "chinese": "选择的课程所提升的参数\\n已经达到上限。\\n确定开始课程吗？"
+    "chinese": "选择的课程所提升的数值\\n已经达到上限。\\n确定开始课程吗？"
   },
   "produce.confirm_limit_parameter_sheet.lesson.button": {
     "japanese": " 開始する",
@@ -2181,11 +2181,11 @@
   },
   "produce.confirm_limit_parameter_sheet.effect.title": {
     "japanese": "パラメータ上限",
-    "chinese": "参数上限"
+    "chinese": "数值上限"
   },
   "produce.confirm_limit_parameter_sheet.effect.description": {
     "japanese": "選択した選択肢で上昇するパラメータは\\nすでに上限に到達しています。\\n選択してよろしいですか？",
-    "chinese": "选择的选项所提升的参数\\n已经达到上限。\\n确定选择吗？"
+    "chinese": "选择的选项所提升的数值\\n已经达到上限。\\n确定选择吗？"
   },
   "produce.confirm_limit_parameter_sheet.effect.button": {
     "japanese": " 選択する",
@@ -2813,7 +2813,7 @@
   },
   "produce.schedule.step_exam_hard_description": {
     "japanese": " 重点的にレッスンをするパラメータが上昇します。\\n目標クリア後はすべてのパラメータが上昇します。",
-    "chinese": " 重点训练的参数上升。\\n完成目标后所有参数都会上升。"
+    "chinese": " 重点训练的数值上升。\\n完成目标后所有数值都会上升。"
   },
   "produce.schedule.step_present_description": {
     "japanese": " Pポイントやアイテムを獲得できます。",
@@ -2833,7 +2833,7 @@
   },
   "produce.schedule.step_event_school_description": {
     "japanese": "選択肢により様々な効果が発生します。\\n主に体力を消費しパラメータを獲得します。",
-    "chinese": " 根据选项会发生各种效果。\\n主要为消耗体力来获得参数。"
+    "chinese": " 根据选项会发生各种效果。\\n主要为消耗体力来获得数值。"
   },
   "produce.schedule.step_shop_description": {
     "japanese": " Pポイントを消費し、\\n様々なメリット効果を得られます。",
@@ -2973,7 +2973,7 @@
   },
   "produce.lesson.parameter": {
     "japanese": "パラメータ",
-    "chinese": "参数"
+    "chinese": "数值"
   },
   "produce.lesson.stamina": {
     "japanese": "体力",
@@ -5057,7 +5057,7 @@
   },
   "produce_prepare.effect_confirm_overlay.status": {
     "japanese": "パラメータ上昇",
-    "chinese": "参数上升"
+    "chinese": "数值上升"
   },
   "produce_prepare.effect_confirm_overlay.playing_skill_effect": {
     "japanese": " プロデュース中効果",
@@ -5873,7 +5873,7 @@
   },
   "card.param.produce.label": {
     "japanese": "初期パラメータ/ボーナス",
-    "chinese": "初始参数/奖励"
+    "chinese": "初始数值/奖励"
   },
   "card.sheet.material.label": {
     "japanese": "必要アイテム",
@@ -5901,7 +5901,7 @@
   },
   "card.upgrade_status_list.parameter": {
     "japanese": "パラメータ・レッスンボーナスアップ",
-    "chinese": "参数・课程奖励提升"
+    "chinese": "数值・课程奖励提升"
   },
   "card.upgrade_status_list.image": {
     "japanese": "イメージ解放",
@@ -6049,7 +6049,7 @@
   },
   "card.idol_card.produce_parameter.title": {
     "japanese": "初期パラメータ",
-    "chinese": "初始参数"
+    "chinese": "初始数值"
   },
   "card.idol_card.detail_sheet.title": {
     "japanese": "アイドル詳細情報",
@@ -6541,7 +6541,7 @@
   },
   "card.produce_event.overlay.label.parameter": {
     "japanese": "パラメータ上昇",
-    "chinese": "参数上升"
+    "chinese": "数值上升"
   },
   "card.produce_event.overlay.label.produce_card": {
     "japanese": "スキルカード「{0}」を獲得可能",
@@ -6665,7 +6665,7 @@
   },
   "memory.detail.contest.status.title": {
     "japanese": "パラメータ",
-    "chinese": "参数"
+    "chinese": "数值"
   },
   "memory.detail.contest.card.title": {
     "japanese": "スキルカード",
@@ -10681,7 +10681,7 @@
   },
   "picturebook.produce_collection.button.status_visible": {
     "japanese": "パラメータ非表示",
-    "chinese": "参数隐藏"
+    "chinese": "数值隐藏"
   },
   "picturebook.produce_collection.origin_description": {
     "japanese": "入手先  ※以下のいずれかで入手できます。",
