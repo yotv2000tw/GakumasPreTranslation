@@ -2729,7 +2729,7 @@
   },
   "produce.schedule.step_event_school": {
     "japanese": "授業",
-    "chinese": "课程"
+    "chinese": "文化课"
   },
   "produce.schedule.step_last": {
     "japanese": " 中間試験",
@@ -3141,7 +3141,7 @@
   },
   "produce.lesson.remain_value_prefix": {
     "japanese": "{0}まで",
-    "chinese": "剩余{0}"
+    "chinese": "{0}还需"
   },
   "produce.lesson.clear": {
     "japanese": "クリア",
@@ -10437,7 +10437,7 @@
   },
   "story.idol.produce.school": {
     "japanese": "授業",
-    "chinese": "授课"
+    "chinese": "文化课"
   },
   "story.idol.produce.activity": {
     "japanese": "お出かけ",
@@ -10625,7 +10625,7 @@
   },
   "story.header.story_type.step_school_event": {
     "japanese": "授業",
-    "chinese": "授课"
+    "chinese": "文化课"
   },
   "story.header.story_type.dearness": {
     "japanese": "親愛度",
